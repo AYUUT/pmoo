@@ -75,3 +75,54 @@ def ModifierCour(code,matiere):
         print("Cour modifié avec succés")
     else: 
         print("Cour "+code+" n'existe pas\n")
+def SupprimerEnseignant(code):
+    if EnseignantExiste(code)==1:
+        lignes=[]
+        with open("enseignants.txt", "r") as f:
+            for ligne in f:
+                txt=ligne.split("\t")
+                if txt[0]!=code:
+                    lignes.append(ligne)
+        f.close()
+        with open("enseignants.txt", "w") as f:
+            for l in lignes:
+                f.write(l)
+        f.close()
+        print("Enseignant supprimé avec succès")
+    else: 
+        print("Enseignant "+code+" n'existe pas\n")
+     
+
+def SupprimerEtudiant(code):
+    if EtudiantExiste(code)==1:
+        lignes=[]
+        with open("etudiants.txt", "r") as f:
+            for ligne in f:
+                txt=ligne.split("\t")
+                if txt[0]!=code:
+                    lignes.append(ligne)
+        f.close()
+        with open("etudiants.txt", "w") as f:
+            for l in lignes:
+                f.write(l)
+        f.close()
+        print("Etudiant supprimé avec succès")
+    else: 
+        print("Etudiant "+code+" n'existe pas\n") 
+def SupprimerCours(code):
+    if CoursExiste(code)==1:
+        lignes=[]
+        with open("cours.txt", "r") as f:
+            for ligne in f:
+                txt=ligne.split("\t")
+                if txt[0]!=code:
+                    lignes.append(ligne)
+        f.close()
+        with open("cours.txt", "w") as f:
+            for l in lignes:
+                f.write(l)
+        f.close()
+        print("Cours supprimé avec succès")
+    else: 
+        print("Cours "+code+" n'existe pas\n")   
+    
