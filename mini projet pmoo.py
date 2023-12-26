@@ -75,6 +75,7 @@ def ModifierCour(code,matiere):
         print("Cour modifié avec succés")
     else: 
         print("Cour "+code+" n'existe pas\n")
+#suppression
 def SupprimerEnseignant(code):
     if EnseignantExiste(code)==1:
         lignes=[]
